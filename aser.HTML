@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تعليم البرمجة</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* تنسيق شريط التنقل */
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* إعدادات الخلفية للأقسام */
+        section {
+            color: black;
+            padding: 60px 20px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-size: 1.5em;
+        }
+
+        /* خلفيات الأقسام */
+        #home {
+            background-image: url('https://source.unsplash.com/1600x900/?coding,technology');
+        }
+
+        #lessons {
+            background-image: url('https://source.unsplash.com/1600x900/?programming,learning');
+        }
+
+        #games {
+            background-image: url('https://source.unsplash.com/1600x900/?games,play');
+        }
+
+        /* تنسيق النصوص */
+        h2 {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+            color: black;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+            color: black;
+        }
+
+        /* تنسيق iframe للفيديوهات */
+        #video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        iframe {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        /* إعدادات خلفية اللعبة */
+        #gameCanvas {
+            background-color: #87CEEB; /* سماء زرقاء */
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #333;
+        }
+
+        /* إعدادات النص */
+        h3 {
+            margin: 20px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#lessons">الدروس</a></li>
+            <li><a href="#games">الألعاب</a></li>
+            <li><a href="#videos">الفيديوهات</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- قسم الرئيسية -->
+<section id="home">
+    <h2>مرحبًا بكم في موقع تعليم البرمجة</h2>
+    <p>تعلم البرمجة بطريقة سهلة وممتعة!</p>
+</section>
+
+<!-- قسم الدروس -->
+<section id="lessons">
+    <h2>الدروس</h2>
+    <p>تعلم أساسيات البرمجة هنا، مقسمة حسب المستوى.</p>
+
+    <h3>أكواد برمجية لألعاب بسيطة</h3>
+    <pre><code>
+# لعبة تخمين الرقم بلغة بايثون
+import random
+
+number = random.randint(1, 100)
+guess = 0
+
+while guess != number:
+    guess = int(input("تخمين رقم بين 1 و 100: "))
+    if guess < number:
+        print("حاول مرة أخرى! الرقم أكبر.")
+    elif guess > number:
+        print("حاول مرة أخرى! الرقم أصغر.")
+    else:
+        print("مبروك! لقد خمّنت الرقم الصحيح.")
+    </code></pre>
+
+    <h3>أكواد لتطبيقات بسيطة</h3>
+    <pre><code>
+# تطبيق حاسبة بسيطة بلغة بايثون
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    return x / y
+
+print("اختر العملية:")
+print("1. جمع")
+print("2. طرح")
+print("3. ضرب")
+print("4. قسمة")
+
+choice = input("أدخل اختيارك (1/2/3/4): ")
+
+num1 = float(input("أدخل الرقم الأول: "))
+num2 = float(input("أدخل الرقم الثاني: "))
+
+if choice == '1':
+    print("النتيجة:", add(num1, num2))
+elif choice == '2':
+    print("النتيجة:", subtract(num1, num2))
+elif choice == '3':
+    print("النتيجة:", multiply(num1, num2))
+elif choice == '4':
+    print("النتيجة:", divide(num1, num2))
+else:
+    print("اختيار غير صحيح")
+    </code></pre>
+
+    <h3>أكواد احترافية</h3>
+    <pre><code>
+# لعبة بسيطة بلغة JavaScript
+let secretNumber = Math.floor(Math.random() * 100) + 1;
+let guess = 0;
+
+while (guess !== secretNumber) {
+    guess = parseInt(prompt("تخمين رقم بين 1 و 100:"));
+    if (guess < secretNumber) {
+        alert("حاول مرة أخرى! الرقم أكبر.");
+    } else if (guess > secretNumber) {
+        alert("حاول مرة أخرى! الرقم أصغر.");
+    } else {
+        alert("مبروك! لقد خمّنت الرقم الصحيح.");
+    }
+}
+    </code></pre>
+</section>
+
+<!-- قسم الألعاب -->
+<section id="games">
+    <h2>الألعاب</h2>
+    <p>استمتع بلعب هذه الألعاب البسيطة على الموقع!</p>
+
+    <h3>لعبة القفز</h3>
+    <canvas id="gameCanvas" width="400" height="300"></canvas>
+    <button onclick="startGame()">ابدأ اللعبة</button>
+</section>
+
+<!-- إضافة الأكواد البرمجية للألعاب -->
+<script>
+    let canvas;
+    let ctx;
+    let player;
+    let obstacles = [];
+    let score = 0;
+    let isJumping = false;
+
+    function startGame() {
+        canvas = document.getElementById("gameCanvas");
+        ctx = canvas.getContext("2d");
+        player = { x: 50, y: canvas.height - 40, width: 30, height: 30 };
+
+        document.addEventListener("keydown", function(event) {
+            if (event.code === "Space" && !isJumping) {
+                isJumping = true;
+                jump();
+            }
+        });
+
+        setInterval(updateGame, 100);
+        generateObstacles();
+    }
+
+    function jump() {
+        let jumpHeight = 0;
+        const jumpInterval = setInterval(() => {
+            if (jumpHeight < 60) {
+                player.y -= 4;
+                jumpHeight += 4;
+            } else {
+                clearInterval(jumpInterval);
+                fall();
+            }
+        }, 20);
+    }
+
+    function fall() {
+        const fallInterval = setInterval(() => {
+            if (player.y < canvas.height - 40) {
+                player.y += 4;
+            } else {
+                clearInterval(fallInterval);
+                isJumping = false;
+            }
+        }, 20);
+    }
+
+    function generateObstacles() {
+        setInterval(() => {
+            const obstacle = { x: canvas.width, y: canvas.height - 40, width: 30, height: 30 };
+            obstacles.push(obstacle);
+        }, 2000);
+    }
+
+    function updateGame() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "orange"; // لون اللاعب
+        ctx.fillRect(player.x, player.y, player.width, player.height);
+
+        for (let i = 0; i < obstacles.length; i++) {
+            obstacles[i].x -= 5;
+            ctx.fillStyle = "red"; // لون العقبات
+            ctx.fillRect(obstacles[i].x, obstacles[i].y, obstacles[i].width, obstacles[i].height);
+
+            // تحقق من الاصطدام
+            if (
+                player.x < obstacles[i].x + obstacles[i].width &&
+                player.x + player.width > obstacles[i].x &&
+                player.y < obstacles[i].y + obstacles[i].height &&
+                player.y + player.height > obstacles[i].y
+            ) {
+                alert("Game Over! Score: " + score);
+                document.location.reload();
+            }
+
+            // زيادة النتيجة
+            if (obstacles[i].x + obstacles[i].width < 0) {
+                obstacles.splice(i, 1);
+                score++;
+            }
+        }
+
+        // عرض النتيجة
+        ctx.fillStyle = "black";
+        ctx.font = "16px Arial";
+        ctx.fillText("Score: " + score, 10, 20);
+    }
+</script>
+
+<!-- قسم الفيديوهات -->
+<section id="videos">
+    <h2>الفيديوهات</h2>
+    <p>شاهد بعض الفيديوهات التعليمية من قناتي.</p>
+    <div id="video-container">
+        <iframe src="https://www.youtube.com/embed/P_iMT8ZJHHY" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Bg3Zk0mBOQQ" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/q_Y7mlwkyQs" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- قسم الاتصال -->
+<section id="contact">
+    <h2>اتصل بنا</h2>
+    <p>لأي استفسارات، لا تتردد في التواصل معنا عبر البريد الإلكتروني.</p>
+adamadem673@gmail.com
+</section>
+
+</body>
+</html>
